@@ -1,0 +1,24 @@
+{
+  "name": "node-resource-tracker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "monitor.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sriimalya/Node-Resource-Tracker.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sriimalya/Node-Resource-Tracker/issues"
+  },
+  "homepage": "https://github.com/sriimalya/Node-Resource-Tracker#readme",
+  "dependencies": {
+    "chalk": "^5.4.1"
+  }
+}

@@ -1,4 +1,5 @@
 import os from 'node:os'
+import chalk from 'chalk'
 
 function monitor(){
     const oldCpus = os.cpus()
@@ -12,12 +13,20 @@ function monitor(){
             }
         })
         console.clear()
-        console.log("======= CPU Usage =======")
+        console.log(chalk.bgMagenta("======== CPU Usage ========"))
         console.table(usage)
 
         const totalMemory = os.totalmem() / (1024 * 1024 * 1024); // in GB
         const memoryUsed = (os.totalmem() - os.freemem()) / (1024 * 1024 * 1024); // in GB
-        console.log(`Memory Used: ${memoryUsed.toFixed(2)} / ${totalMemory.toFixed(2)} GB`);
+        
+        console.log(chalk.bgCyan("====== Memory Usage ======"));
+
+        console.log(
+            'Memory Used:', memoryUsed>5 ? 
+            chalk.redBright(`${memoryUsed.toFixed(2)} / ${totalMemory.toFixed(2)} GB`) :
+            chalk.greenBright(`${memoryUsed.toFixed(2)} / ${totalMemory.toFixed(2)} GB`)
+        );
+        
     }, 1000)
 }
 
